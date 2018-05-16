@@ -7,6 +7,7 @@ class kubernetes::service (
   String $container_runtime          = $kubernetes::container_runtime,
   String $kube_dns_ip                = $kubernetes::kube_dns_ip,
   Optional[String] $etcd_ip          = $kubernetes::etcd_ip,
+  Optional[String] $ca_crt           = $kubernetes::ca_crt,
 ){
 
   $peeruls = inline_template("'{\"peerURLs\":[\"http://${etcd_ip}:2380\"]}'")
